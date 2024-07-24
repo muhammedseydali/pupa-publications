@@ -20,13 +20,52 @@ Version: 1.1
   --header-height-min: 80px;
 }
 
-/* on mobile devices below 600px
- */
+.header-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media screen and (max-width: 600px) {
   :root {
     --header-height: 100px;
     --header-height-min: 80px;
   }
+}
+
+@media screen and (min-width: 601px) and (max-width: 770px) {
+  .header-image {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 771px) {
+  .header-image {
+    max-width: 200px; /* Set a fixed maximum width for larger screens */
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .section-header .section-title:before,
+  .section-header .section-title:after {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .section-header .section-title:before,
+  .section-header .section-title:after {
+    width: 25%;
+  }
+}
+
+
+/* Additional styles to ensure proper alignment and padding */
+.main-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 /* Theme Colors */
@@ -2406,7 +2445,40 @@ span.prev-price {
 }
 
 #footer .footer-item img.footer-logo {
+  margin-bottom: 20px;
+  max-width: 100%; /* Ensure the image does not exceed the container width */
+  height: auto;   /* Maintain the aspect ratio */
+}
+
+@media screen and (max-width: 600px) {
+  #footer .footer-item img.footer-logo {
+    max-width: 80%; /* Resize the image for small screens */
+  }
+}
+
+
+#footer .footer-description {
+  font-size: 16px;
+  color: #777;
   margin-bottom: 40px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 770px) {
+  #footer .footer-item img.footer-logo {
+    max-width: 70%; /* Resize the image for medium-small screens */
+  }
+  #footer .footer-description {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 771px) {
+  #footer .footer-item img.footer-logo {
+    max-width: 200px; /* Fixed maximum width for larger screens */
+  }
+  #footer .footer-description {
+    font-size: 16px;
+  }
 }
 
 #footer .footer-item p {
