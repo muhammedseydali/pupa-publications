@@ -2035,7 +2035,21 @@ img.post-image {
 .product-item:nth-child(4) {
   animation-delay: 0.8s;
 }
+.product-item img {
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
 
+.product-item:hover img {
+  transform: scale(1.1); /* Zoom effect */
+}
+.product-style img.product-item {
+  position: relative;
+  background: #EFEEE8;
+  border: 1px solid #EAE8DF;
+  padding: 15%;
+  cursor: pointer;
+  width: 100%;
+}
 
 /*----- Best Selling Section Section
 --------------------------------------------------------------*/
@@ -2611,7 +2625,7 @@ span.prev-price {
   margin: 0;
 }
 
-.product-item .item-price {
+ .item-price {
   color: #74642F;
   font-size: 1.3em;
 }
