@@ -392,13 +392,28 @@
 				description: 'ഒരു സമ്മര്‍ദ്ദിതനാടകവേദിയിലെ കുടിപാര്‍പ്പുകാരാണ്‌ മനുഷ്യര്‍ എന്നതിന്‌ ഈ കഥകള്‍ അടിവരയിടുന്നു. ചരിത്രം കോമാളിവേഷത്തില്‍ മര്‍ദ്ദനോപകരണവുമായി പ്രത്യക്ഷപ്പെടുമ്പോള്‍ കഥകള്‍കൊണ്ടു തീര്‍ക്കാവുന്ന പ്രതിരോധങ്ങളെക്കുറിച്ചെല്ലാം ഈ എഴുത്തുകാരി ബോധവതിയാണ്‌. ഒരുപക്ഷേ, മലയാളത്തില്‍ അധികം മാതൃകകളില്ലാത്ത എഴുത്തുരീതിയാണ്‌ ഈ കഥാകാരിയുടേത്‌....',
 				price: 'AED 25.00',
 				whatsappLink: 'https://wa.me/+971503226502?text=Order%20for%20the%20book%20%27ഗില്ലറ്റിൻ%20by%20കെ%20ആർ%20മീര...%27'
-			}
-			// Add more book objects as needed
+			},
+			{
+				title: "ഒന്നും ഒന്നും വെറുതെയല്ല",
+				description: "സഹൃദരായ വയനക്കാരുടെ വൈകാരിക നഭോമണ്ഡലങ്ങളെ പ്രഖ്ഷുബ്ധമാക്കാൻ ഈ കവിതകൾക്ക് കഴിയുമെന്നുറപ്പ്. തിക്തമായ സാമൂഹിക യഥാർത്ഥങ്ങളിലേക്ക് കൺതുറക്കുന്ന വരികളും വിപ്ലവ ചിന്തയുടെ കനലെരിയുന്ന നേരിപ്പൊടുകളും ഈ കവിതകളെ സവിശേഷമായി അടയാളപ്പെടുത്തുന്നുണ്ട്",
+				author: "ഡോ: അഷ്‌റഫ്‌ കൽപ്പറ്റ",
+				imageUrl: "images/main-cover.jpg",
+				orderLink: "https://wa.me/+971503226502?text=Order%20for%20the%20book%20'ഒന്നും%20ഒന്നും%20വെറുതെയല്ല...'"
+			},
+			{
+				title: "റാബിയ",
+				description: "ഈ നോവലിലെ പ്രധാന കഥാപാത്രങ്ങളായ മൂന്ന്‌ സ്‌ത്രീകളും പുരുഷന്റെ ഇരകളാക്കപ്പെട്ടവരാണ്‌. അവരുടെ ദുരന്തങ്ങള്‍ക്ക്‌ ഏറെക്കുറെ സമാനസ്വഭാവമാണെങ്കിലും കഥയുടെ ഓരോഘട്ടങ്ങളിലായി എല്ലാ കെട്ടുമഴിച്ച്‌ ഇവര്‍ രക്ഷപ്പെടുന്നത്‌ ഓരോ തരത്തിലാണ്‌",
+				imageUrl: "images/rabiyaa.jpg",
+				orderLink: "https://wa.me/+971503226502?text=Order%20for%20the%20book%20'റാബിയ%20by%20സഹീറ%20തങ്ങൾ...'"
+			},
 		];
 	
 		// Function to update the best selling book section
 		function updateBestSellingBook() {
-			const book = bestSellingBooks[0]; // Use the first book in the array (or change as needed)
+			// Calculate the index based on the current day
+			const today = new Date();
+        	const index = today.getDate() % bestSellingBooks.length;
+			const book = bestSellingBooks[index];
 	
 			document.getElementById('product-image').querySelector('img').src = book.imageUrl;
 			document.getElementById('author-name').textContent = `By ${book.author}`;
